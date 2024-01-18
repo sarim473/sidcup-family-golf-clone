@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+html body {
+  height: 100%;
+  width: 100%;
+  perspective: 800px;
+}
+
+#nav {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-direction: unset;
+  padding: 0px 150px;
+  gap: 50px;
+  position: fixed;
+  z-index: 99;
+}
+
+#nav img {
+  height: 75px;
+}
+
+#nav .nav-item {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#cursor {
+  height: 20px;
+  width: 20px;
+  background-color: #95c11e;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+  transition: all linear 0.1s;
+}
+
+#cursor-blur {
+  height: 500px;
+  width: 500px;
+  background-color: rgba(150, 193, 30, 0.3);
+  border-radius: 50%;
+  position: fixed;
+  filter: blur(80px);
+  z-index: 9;
+  transition: all linear 0.4s;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#main #page1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#main #page1 h1 {
+  font-size: 110px;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+#main #page1 h1::before {
+  content: "EAT . DRINK . PLAY.";
+  position: absolute;
+  color: black;
+  top: -6px;
+  left: -6px;
+  -webkit-text-stroke: 2px #95C11E;
+  z-index: -1;
+}
+
+#main #page1 h2 {
+  font-size: 30px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#main #page1 p {
+  font-size: 20px;
+  font-weight: 500;
+  width: 40%;
+}
+
+#main #page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+
+#main #page2 #scroller {
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  position: relative;
+  z-index: 10;
+}
+
+#main #page2 #scroller::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+#main #page2 #scroller .scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#main #page2 #scroller .scroller-in h4 {
+  display: inline-block;
+  font-size: 140px;
+  font-weight: 900;
+  margin-right: 10px;
+  color: transparent;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  -webkit-text-stroke: 2px #95C11E;
+  transition: all 0.5s ease-in-out;
+}
+
+#main #page2 #scroller .scroller-in h4:hover {
+  color: #95C11E;
+}
+
+#main #page2 #about-us {
+  height: 40vh;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 50px;
+}
+
+#main #page2 #about-us img {
+  height: 220px;
+  width: 220px;
+  border-radius: 20px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+#main #page2 #about-us #about-us-in {
+  width: 50%;
+  text-align: center;
+}
+
+#main #page2 #about-us #about-us-in h3 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+#main #page2 #about-us #about-us-in p {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#main #page2 #cards-container {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 70px;
+  flex-direction: row;
+  position: relative;
+  z-index: 10;
+  margin-top: 50px;
+}
+
+#main #page2 #cards-container #card1 {
+  background: url("../Assests/card1.avif") no-repeat;
+  background-size: cover;
+}
+
+#main #page2 #cards-container #card2 {
+  background: url("../Assests/card2.webp") no-repeat;
+  background-size: cover;
+}
+
+#main #page2 #cards-container #card3 {
+  background: url("../Assests/card3.avif") no-repeat;
+  background-size: cover;
+}
+
+#main #page2 #cards-container .card {
+  height: 88%;
+  width: 24%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+#main #page2 #cards-container .card:hover {
+  transform: rotate3d(-1, 1, 0, 20deg);
+}
+
+#main #page2 #cards-container .card .overlay {
+  height: 100%;
+  width: 100%;
+  background: #95C11E;
+  padding: 30px;
+  padding-top: 90px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#main #page2 #cards-container .card .overlay:hover {
+  opacity: 1;
+}
+
+#main #page2 #cards-container .card .overlay h4 {
+  color: black;
+  font-size: 30px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+#main #page2 #cards-container .card .overlay p {
+  color: black;
+  font-size: 18px;
+}
+
+#main #page2 #green-div {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  background: linear-gradient(to left bottom, #1FA337, #ABDE22);
+}
+
+#main #page2 #green-div h4 {
+  width: 50%;
+  font-size: 27px;
+  line-height: 40px;
+  font-weight: 800;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#main #page2 #green-div img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 14%;
+}
+
+/*# sourceMappingURL=main.css.map */
